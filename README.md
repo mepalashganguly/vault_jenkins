@@ -275,6 +275,7 @@ token_policies 	[default jenkins]
 
 This is the long lived Token ID we generated for Jenkins use.
 
+
 ![image alt text](image_4.png)
 
 This is the Role ID for our example app and is restricted to "secret/hello" by our policy, it can also be hardcoded in the source code or job script.
