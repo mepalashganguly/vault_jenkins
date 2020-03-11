@@ -187,6 +187,26 @@ And another value value=behind-super-secret-password
 
 # Reading secrets from Jenkins
 
+## The simplest way to test from Jenkins is to do the following:
+
+Add the following as Environment variables in Jenkins > Manage Jenkins > Configure-System > Environment Variables
+```
+VAULT_ADDR=http://vault:8200
+VAULT_SKIP_VERIFY=true
+VAULT_TOKEN=s.HmQv84486IqbwY6fJYmYnWW0  (This can be root token or generated token for a policy)
+```
+Save the above and create a free style Jenkins job. 
+
+In the "Shell" Execution at the "Build" stage, add a script as below:
+```bash
+secretpath=kv/hello
+curl -s -o vault.zip https://releases.hashicorp.com/vault/0.9.1/vault_0.9.1_linux_amd64.zip ; yes | unzip vault.zip
+./vault read $secretpath
+secret=$(./vault read -field target $secretpath)
+echo Password is $secret
+```
+
+
 ## AppRole
 
 AppRole is a secure introduction method to establish machine identity. 
