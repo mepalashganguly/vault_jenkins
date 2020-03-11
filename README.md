@@ -164,6 +164,9 @@ We will use the Vault client from inside the container but you can use one insta
 ```bash
 $ alias vault='docker exec -it vaultjenkins_vault_1 vault "$@"'
 
+$ vault login
+(Enter the Initial Root Token when prompted)
+
 $ vault write -address=http://127.0.0.1:8200 secret/billion-dollars value=behind-super-secret-password
 
 $ vault read secret/billion-dollars
