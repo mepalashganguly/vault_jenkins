@@ -167,20 +167,21 @@ $ alias vault='docker exec -it vaultjenkins_vault_1 vault "$@"'
 $ vault login
 (Enter the Initial Root Token when prompted)
 
-$ vault write -address=http://127.0.0.1:8200 secret/billion-dollars value=behind-super-secret-password
+https://www.vaultproject.io/intro/getting-started/secrets-engines/
 
-$ vault read secret/billion-dollars
-Key             	Value
----             	-----
-refresh_interval	2592000
-value           	behind-super-secret-password
+$ vault secrets enable -path=kv kv
+$ vault write kv/hello target=world
+
+$ vault read kv/hello
+Key                 Value
+---                 -----
+refresh_interval    768h
+target              world
 ```
 
+Here we store a secret text "world" in the path "kv/hello" and check in the UI if it was recorded encrypted.
 
-Here we store a secret text "behind-super-secret-password" in the path "secret/billion-dollars" and check in the UI if it was recorded encrypted.
-
-
-
+And another value value=behind-super-secret-password
 
 ![image alt text](image_1.png)
 
