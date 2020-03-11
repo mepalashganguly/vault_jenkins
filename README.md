@@ -1,6 +1,6 @@
 # How to use HashiCorp Vault to store secrets and read them from Jenkins
 
-by Rodrigo A. Diaz Leven
+Original by Rodrigo A. Diaz Leven, updated to work for latest versions by Prasanjit Singh
 
 - [How to use HashiCorp Vault to store secrets and read them from Jenkins](#how-to-use-hashicorp-vault-to-store-secrets-and-read-them-from-jenkins)
   * [Description](#description)
@@ -109,13 +109,14 @@ Creating vaultjenkins_blueocean_1 ... done
 
 $ docker exec -it vaultjenkins_vault_1 sh
 
-(vaultjenkins_vault_1)$ vault init
-Unseal Key 1: d28dc3e20848c499749450b411bdc55416cefb0ff6ddefd01ec02088aa5c90aa01
-Unseal Key 2: ad2b7e9d02d0c1cb5b98fafbc2e3ea56bd4d4fa112a0c61882c1179d6c6585f302
-Unseal Key 3: c393269f177ba3d07b14dbf14e25a325205dfbf5c91769b8e55bf91aff693ce603
-Unseal Key 4: 87c605e5f766d2f76d39756b486cbdafbb1998e72d2f766c40911f1a288e53a404
-Unseal Key 5: e97e5de7e2cdb0ec4db55461c4aaf4dc26092cb3f698d9cc270bf19dbb82eab105
-Initial Root Token: 5a4a7e11-1e2f-6f76-170e-b8ec58cd2da5
+(vaultjenkins_vault_1)$ vault operator init
+Unseal Key 1: Tx4UxHXmsx9S+6Q5hyLgVsM6ellMnoBiQejak05jJkyh
+Unseal Key 2: VMU/j5/nX0iAvhKF2FXi2gpKjbu574MVoj4/ou1v7eqi
+Unseal Key 3: LKDNywhJX+eF3f/xPCFLRkzWoizfpSf0fT85CJB9IKpk
+Unseal Key 4: ypH0PS8p07iQ5ADi24Cu7LWJh7oZrZnBmuXt+Th84TS8
+Unseal Key 5: OqjbC2h8+6iQ0IllDmPXK/oOMMlLVbxDC81RJpqDRZMG
+
+Initial Root Token: s.HmQv84486IqbwY6fJYmYnWW0
 
 (vaultjenkins_vault_1)$ vault unseal (run this 3 times with 3 different keys from above)
 
