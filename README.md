@@ -118,8 +118,33 @@ Unseal Key 5: OqjbC2h8+6iQ0IllDmPXK/oOMMlLVbxDC81RJpqDRZMG
 
 Initial Root Token: s.HmQv84486IqbwY6fJYmYnWW0
 
-(vault_jenkins_vault_1)$ vault unseal (run this 3 times with 3 different keys from above)
+(vault_jenkins_vault_1)$ vault operator unseal (run this 3 times with 3 different keys from above)
 
+/ # vault operator unseal Tx4UxHXmsx9S+6Q5hyLgVsM6ellMnoBiQejak05jJkyh
+Key                Value
+---                -----
+Seal Type          shamir
+Initialized        true
+Sealed             true
+Total Shares       5
+Threshold          3
+Unseal Progress    1/3
+Unseal Nonce       e584018b-9523-c8ad-6f13-bf0359dd189c
+Version            1.3.3
+HA Enabled         true
+
+```
+```
+Vault initialized with 5 key shares and a key threshold of 3. Please securely
+distribute the key shares printed above. When the Vault is re-sealed,
+restarted, or stopped, you must supply at least 3 of these keys to unseal it
+before it can start servicing requests.
+
+Vault does not store the generated master key. Without at least 3 key to
+reconstruct the master key, Vault will remain permanently sealed!
+
+It is possible to generate new unseal keys, provided you have a quorum of
+existing unseal keys shares. See "vault operator rekey" for more information.
 ```
 
 ## Checking Vault is unsealed
