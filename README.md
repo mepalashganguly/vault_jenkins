@@ -100,16 +100,16 @@ This is only needed the first time we setup vault and you should store the keys 
 
 ```bash
 $ docker-compose up -d
-Creating vaultjenkins_consul_1 ... 
-Creating vaultjenkins_consul_1 ... done
-Creating vaultjenkins_vault_1 ... 
-Creating vaultjenkins_vault_1 ... done
-Creating vaultjenkins_blueocean_1 ... 
-Creating vaultjenkins_blueocean_1 ... done
+Creating vault_jenkins_consul_1 ... 
+Creating vault_jenkins_consul_1 ... done
+Creating vault_jenkins_vault_1 ... 
+Creating vault_jenkins_vault_1 ... done
+Creating vault_jenkins_blueocean_1 ... 
+Creating vault_jenkins_blueocean_1 ... done
 
-$ docker exec -it vaultjenkins_vault_1 sh
+$ docker exec -it vault_jenkins_vault_1 sh
 
-(vaultjenkins_vault_1)$ vault operator init
+(vault_jenkins_vault_1)$ vault operator init
 Unseal Key 1: Tx4UxHXmsx9S+6Q5hyLgVsM6ellMnoBiQejak05jJkyh
 Unseal Key 2: VMU/j5/nX0iAvhKF2FXi2gpKjbu574MVoj4/ou1v7eqi
 Unseal Key 3: LKDNywhJX+eF3f/xPCFLRkzWoizfpSf0fT85CJB9IKpk
@@ -118,7 +118,7 @@ Unseal Key 5: OqjbC2h8+6iQ0IllDmPXK/oOMMlLVbxDC81RJpqDRZMG
 
 Initial Root Token: s.HmQv84486IqbwY6fJYmYnWW0
 
-(vaultjenkins_vault_1)$ vault unseal (run this 3 times with 3 different keys from above)
+(vault_jenkins_vault_1)$ vault unseal (run this 3 times with 3 different keys from above)
 
 ```
 
